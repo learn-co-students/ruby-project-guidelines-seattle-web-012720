@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 20200211222322) do
     t.integer "service_rep_id"
     t.integer "location"
     t.string  "status",                  default: "received"
+    t.string  "setup_type"
+    t.string  "special_instructions"
   end
 
   create_table "service_reps", force: :cascade do |t|
