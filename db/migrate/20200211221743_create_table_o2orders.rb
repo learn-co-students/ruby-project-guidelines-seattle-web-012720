@@ -4,6 +4,7 @@ class CreateTableO2orders < ActiveRecord::Migration[5.0]
       t.integer :customer_service_rep_id
       t.integer :service_rep_id
       t.integer :location
+      t.timestamps
     end
   end
 end

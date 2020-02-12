@@ -17,12 +17,14 @@ ActiveRecord::Schema.define(version: 20200211222322) do
   end
 
   create_table "o2orders", force: :cascade do |t|
-    t.integer "customer_service_rep_id"
-    t.integer "service_rep_id"
-    t.integer "location"
-    t.string  "status",                  default: "received"
-    t.string  "setup_type"
-    t.string  "special_instructions"
+    t.integer  "customer_service_rep_id"
+    t.integer  "service_rep_id"
+    t.integer  "location"
+    t.datetime "created_at",                                   null: false
+    t.datetime "updated_at",                                   null: false
+    t.string   "status",                  default: "received"
+    t.string   "setup_type"
+    t.string   "special_instructions"
   end
 
   create_table "service_reps", force: :cascade do |t|
