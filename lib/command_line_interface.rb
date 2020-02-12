@@ -11,23 +11,31 @@ class CommandLineInterface
     puts "5 - delete an order"
   end
 
-  def all
-    print O2order.id[1]
+  #   def all
+  #     print
+  #   end
+  response = nil
+
+  def input
+    response = gets.chomp
+    puts response + " is what you typed"
   end
 
-  #   def input
-  #     response = gets.chomp
-  #   end
+  def if1
+    if response = 1
+      puts O2order.all.location
+    end
+  end
 
-  #   def return_current
-  #     if response = "1"
-  #         not_done=[]
-  #       O2order.all.find_all do |x|
-  #         if x.status != "complete"
-  #             not_done<< x
+  # def return_current
+  #   if response = "1"
+  #       not_done=[]
+  #     O2order.all.find_all do |x|
+  #       if x.status != "complete"
+  #           not_done<< x
 
-  #         end
   #       end
   #     end
   #   end
+  # end
 end
