@@ -104,6 +104,7 @@ class Cli
                 Cli.end(order, user)
             end
         else
+            puts "Order not cancelled\n\n".colorize(:blue)
             Cli.end(order, user)
         end
     end 
