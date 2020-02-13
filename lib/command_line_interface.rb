@@ -5,18 +5,23 @@ class CommandLineInterface
   end
 
   def greet
+ 
+
+    puts 
     puts "\n"
-    puts "Welcome to MattCare, the best resource for medicinal oxygen delivery information in the world!"
+    puts "Welcome to MattCare, your best tracking option for medicinal oxygen delivery!"
   end
 
   def menu
     puts "\n"
+    puts "______________________________________"
     puts "1 - check current orders"
     puts "2 - create a new order"
     puts "3 - update the status of an order"
-    puts "4 - assign a driver to an order"
+    puts "4 - assign a new driver to an order"
     puts "5 - delete an order"
     puts "6 - quit the program"
+    puts "______________________________________"
   end
 
   #   def all
@@ -27,22 +32,19 @@ class CommandLineInterface
   def input
     response = gets.chomp
     if response == "1"
-      if1
+      fetch_all_orders
       start
     elsif response == "2"
-      if2
+      create_new_order
     elsif response == "3"
-    if3
+      update_status
     elsif response == "4"
-      print "Feature 4 not built"
-      print "\n"
-      start
+      update_driver
     elsif response == "5"
-      print "Feature 5 not built"
-      print "\n"
-      start
+      delete_order
     elsif response == "6"
-      quit
+      puts "bye!"
+      sleep 1
     else
       print response
       print " isnt an option"
@@ -67,7 +69,7 @@ class CommandLineInterface
     end
   end
 
-  def if1
+  def fetch_all_orders
     # if response = 1
     print "Here are all of the current orders in the system: \n"
     O2order.all.each do |x|
@@ -205,7 +207,7 @@ class CommandLineInterface
     print "Your order has been created!"
   end
 
-  def if2
+  def create_new_order
     print "Lets make a new o2 order!\n"
     print "First thing, lets make sure this order is in our area \n"
     print "Enter the zip code on the order:\n"
@@ -219,8 +221,8 @@ class CommandLineInterface
     start
   end
 
-  def if3
-    if1
+  def update_status
+    fetch_all_orders
     print "\n"
     print "Please enter the number of the order you wish to update:\n"
     toupdate = gets.chomp.to_i
@@ -237,6 +239,67 @@ class CommandLineInterface
     newselection = gets.chomp.to_i
     newindex = (newselection - 1)
     newstatus = order_status[newindex]
-    
+    updateme = O2order.find_by(id: toupdate)
+    updateme.status = newstatus
+    updateme.save
+    print "the status of order "
+    print toupdate
+    print " has been updated to "
+    print newstatus
+    start
+  end
+
+  def list_drivers
+    # if response = 1
+    print "Here are all of the current orders in the system: \n"
+    O2order.all.each do |x|
+      location = x.location
+      sr = x.service_rep_id
+      print "* order "
+      print x.id
+      print ". \n"
+      print "This patient is located in zip code "
+      print location
+      print ". The driver currently assigned is "
+      print get_name_sr(sr)
+      print ". \n \n"
+    end
+  end
+
+  def update_driver
+    list_drivers
+    print "\n"
+    print "Please enter the number of the order for which you wish to change the assigned driver:\n"
+    toupdate = gets.chomp.to_i
+    assign_sr
+    updateme = O2order.find_by(id: toupdate)
+    updateme.service_rep_id = @assigned_sr_id
+    updateme.save
+    print "the driver of order "
+    print toupdate
+    print " has been updated to "
+    print @assigned_sr_id
+    start
+  end
+
+  def delete_order
+    fetch_all_orders
+    print "Please type the number for the order that you wish to delete"
+    deleteid = gets.chomp.to_i
+    deleteme = O2order.find_by(id: deleteid)
+    print "Are you sure that you want to delete order "
+    print deleteid
+    print " ?"
+    confirm = gets.chomp
+    if confirm == "Y"
+      deleteme.destroy
+      print "This order has been deleted"
+      start
+    elsif confirm == "N"
+      start
+    else
+      print "you must be really unsure about this, lets start over"
+      start
+    end
   end
 end
