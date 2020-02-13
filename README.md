@@ -1,7 +1,7 @@
 Sliceline - a CRUD demo
 ========================
 
-This repository contains a command-line-interface program that allows the user to create an order, update the order, find their order, and delete their order. It utilizes Ruby and SQLite3 (thrugh ActiveRecord) to create a database with various associations, provides the methods to access the database, and creates an user experience through CLI.
+A simple CLI program to generate an order for pizza. This repository contains a command-line-interface program that allows the user to create an order, update the order, find their order, and delete their order. It utilizes Ruby and SQLite3 (thrugh ActiveRecord) to create a database with various associations, provides the methods to access the database, and creates an user experience through CLI.
 
 ---
 
