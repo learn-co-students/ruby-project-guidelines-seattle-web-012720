@@ -217,7 +217,7 @@ class CommandLineInterface
   def check_zip
     @zip = nil
     zip = gets.chomp.to_i
-    binding.pry
+    # binding.pry
     tc_zips = [98531, 98530, 98556, 98576, 98579, 98501, 98503, 98502, 98505, 98589, 98504, 98507, 98506, 98509, 98508, 98512, 98599, 98516, 98597, 98513]
     # numzip = zip.to_i
     # binding.pry
