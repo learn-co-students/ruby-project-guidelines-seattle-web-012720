@@ -122,6 +122,17 @@ Fork and clone the repository. You will need to have Ruby installed on your devi
 
 ![toppings in order](https://github.com/lfriedrichs/ruby-project-guidelines-seattle-web-012720/blob/master/images/User_enters_toppings_input_is_parsed_sorted_and_stored.png)
 
+### end program
+
+- enter: n or N
+
+![end program](https://github.com/lfriedrichs/ruby-project-guidelines-seattle-web-012720/blob/master/images/Farewell_method.png)
+
+### user selects N everytime (no name given)
+
+- enter: n or N
+
+![no name](https://github.com/lfriedrichs/ruby-project-guidelines-seattle-web-012720/blob/master/images/User_has_no_name.png)
 
 ### error handling
 
