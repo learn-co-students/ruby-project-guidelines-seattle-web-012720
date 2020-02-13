@@ -9,12 +9,6 @@ I wanted to create an app that would assist durable medical equipment companies 
 
 Screenshots
 
-
-
-
-
-
-
 Technology Used
 Ruby
 SQL
