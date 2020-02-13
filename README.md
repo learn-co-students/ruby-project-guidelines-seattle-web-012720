@@ -71,7 +71,13 @@ Fork and clone the repository. You will need to have Ruby installed on your devi
 
 - enter: NUMBER
 
-![removes NUMBER pizzas to order](https://github.com/lfriedrichs/ruby-project-guidelines-seattle-web-012720/blob/master/images/User_enters_the_number_of_pizzas_to_remove.png)
+![removes NUMBER pizzas from order](https://github.com/lfriedrichs/ruby-project-guidelines-seattle-web-012720/blob/master/images/User_enters_the_number_of_pizzas_to_remove.png)
+
+### user removes all pizzas from their order
+
+- enter: NUMBER
+
+![removes all pizzas from order](https://github.com/lfriedrichs/ruby-project-guidelines-seattle-web-012720/blob/master/images/User_empties_their_order.png)
 
 ### select cancel pizza from order
 
@@ -83,10 +89,35 @@ Fork and clone the repository. You will need to have Ruby installed on your devi
 
 - enter: y or Y
 
-![cancel order](https://github.com/lfriedrichs/ruby-project-guidelines-seattle-web-012720/blob/master/images/User_confirms_cancel_order_command.png)
+![confirm cancellation](https://github.com/lfriedrichs/ruby-project-guidelines-seattle-web-012720/blob/master/images/User_confirms_cancel_order_command.png)
 
 ### abort order cancellation
 
 - enter: n or N
 
-![cancel order](https://github.com/lfriedrichs/ruby-project-guidelines-seattle-web-012720/blob/master/images/User_aborts_order_cancellation.png)
+![abort cancellation](https://github.com/lfriedrichs/ruby-project-guidelines-seattle-web-012720/blob/master/images/User_aborts_order_cancellation.png)
+
+### user mistakenly selects has order
+
+- enter: y or Y then: NAME
+
+![mistaken order](https://github.com/lfriedrichs/ruby-project-guidelines-seattle-web-012720/blob/master/images/User_mistakenly_selects_has_an_order.png)
+
+### user mistakenly selects has order and no to create order
+
+- enter: y or Y then: NAME then: n or N then: y or Y
+
+![mistaken order and missed create order](https://github.com/lfriedrichs/ruby-project-guidelines-seattle-web-012720/blob/master/images/User_has_no_order_still_wants_help.png)
+
+### user selects create order
+
+- enter: y or Y
+
+![cancel order](https://github.com/lfriedrichs/ruby-project-guidelines-seattle-web-012720/blob/master/images/User_selects_create_an_order.png)
+
+
+### user enters the number of pizzas in the order, then enters the topping
+
+- enter: NUMBER then: TOPPINGS
+
+![toppings in order](https://github.com/lfriedrichs/ruby-project-guidelines-seattle-web-012720/blob/master/images/User_enters_toppings_input_is_parsed_sorted_and_stored.png)
