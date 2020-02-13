@@ -50,7 +50,8 @@ class Helper
                 puts "\n#{str1}#{str2}\n\n"
                 number = gets.chomp 
             end 
-        elsif number.to_i <= 0
+        end
+        if number.to_i <= 0
             until number.to_i > 0
                 puts "\n#{str3}#{str4}#{str5}\n\n"
                 number = gets.chomp 
@@ -138,8 +139,10 @@ class Helper
             name = "A pizza with #{Helper.topping_to_s(topping_objects, true)}."
             pizza = Pizza.create(name: name)
             pizza.pizza_topping_helper(topping_objects)
+            pizza
+        else
+            pizza.first 
         end
-        pizza 
     end
 
     def self.comparison_helper(str1, str2, str3)

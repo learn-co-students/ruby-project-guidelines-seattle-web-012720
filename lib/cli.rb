@@ -139,7 +139,7 @@ class Cli
     def self.create_pizza(user) 
         number = Helper.num_pizzas
         toppings = Helper.what_toppings(number)
-        pizza = Helper.create_pizza(toppings).first
+        pizza = Helper.create_pizza(toppings)
         order = Order.create(user_id: user.id, num_pizzas: number, pizza_id: pizza.id)
         order.pizza_id = pizza.id
         topping_objects = Topping.all.select {|topping| toppings.include?(topping.name)}
