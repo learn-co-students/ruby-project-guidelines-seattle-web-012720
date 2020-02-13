@@ -121,3 +121,18 @@ Fork and clone the repository. You will need to have Ruby installed on your devi
 - enter: NUMBER then: TOPPINGS
 
 ![toppings in order](https://github.com/lfriedrichs/ruby-project-guidelines-seattle-web-012720/blob/master/images/User_enters_toppings_input_is_parsed_sorted_and_stored.png)
+
+
+### error handling
+
+- if wrong input is given, follow instructions
+
+![error handling](https://github.com/lfriedrichs/ruby-project-guidelines-seattle-web-012720/blob/master/images/Error_handling_for_input.png)
+
+![error handling](https://github.com/lfriedrichs/ruby-project-guidelines-seattle-web-012720/blob/master/images/Error_handling_for_input_2.png)
+
+![error handling](https://github.com/lfriedrichs/ruby-project-guidelines-seattle-web-012720/blob/master/images/Error_handling_for_input_3.png)
+
+![error handling](https://github.com/lfriedrichs/ruby-project-guidelines-seattle-web-012720/blob/master/images/Error_handling_for_user_input_4.png)
+
+![error handling](https://github.com/lfriedrichs/ruby-project-guidelines-seattle-web-012720/blob/master/images/Error_handling_for_user_input.png)
