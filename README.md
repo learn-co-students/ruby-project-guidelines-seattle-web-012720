@@ -61,8 +61,32 @@ Fork and clone the repository. You will need to have Ruby installed on your devi
 
 ![adds NUMBER pizzas to order](https://github.com/lfriedrichs/ruby-project-guidelines-seattle-web-012720/blob/master/images/User_enters_the_number_of_pizzas_to_add_displays_current_order_prompts_other_changes.png)
 
-### enter the number of pizzas to add
+### select remove pizza from order
+
+- enter: remove (not case sensitive)
+
+![removes pizzas from order](https://github.com/lfriedrichs/ruby-project-guidelines-seattle-web-012720/blob/master/images/User_selects_remove_pizza.png)
+
+### enter the number of pizzas to remove
 
 - enter: NUMBER
 
-![adds NUMBER pizzas to order](https://github.com/lfriedrichs/ruby-project-guidelines-seattle-web-012720/blob/master/images/User_enters_the_number_of_pizzas_to_add_displays_current_order_prompts_other_changes.png)
+![removes NUMBER pizzas to order](https://github.com/lfriedrichs/ruby-project-guidelines-seattle-web-012720/blob/master/images/User_enters_the_number_of_pizzas_to_remove.png)
+
+### select cancel pizza from order
+
+- enter: cancel (not case sensitive)
+
+![cancel order](https://github.com/lfriedrichs/ruby-project-guidelines-seattle-web-012720/blob/master/images/User_selects_cancel_order.png)
+
+### confirm order cancellation
+
+- enter: y or Y
+
+![cancel order](https://github.com/lfriedrichs/ruby-project-guidelines-seattle-web-012720/blob/master/images/User_confirms_cancel_order_command.png)
+
+### abort order cancellation
+
+- enter: n or N
+
+![cancel order](https://github.com/lfriedrichs/ruby-project-guidelines-seattle-web-012720/blob/master/images/User_aborts_order_cancellation.png)
