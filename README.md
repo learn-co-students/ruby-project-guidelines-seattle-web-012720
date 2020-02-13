@@ -22,12 +22,16 @@ Fork and clone the repository. You will need to have Ruby installed on your devi
 
 - enter: ruby bin/run.rb
 
-### methods
+![start program](https://github.com/lfriedrichs/ruby-project-guidelines-seattle-web-012720/blob/master/images/Program_start_up.png)
 
+### choose existing order
 
+- enter: y or Y
 
+![existing order](https://github.com/lfriedrichs/ruby-project-guidelines-seattle-web-012720/blob/master/images/User_chooses_existing_order_asks_for_name.png)
 
+### enter name to locate order
 
-![thumbs_up](https://media.giphy.com/media/111ebonMs90YLu/giphy.gif)
+- enter: NAME
 
-
+![locate order](https://github.com/lfriedrichs/ruby-project-guidelines-seattle-web-012720/blob/master/images/Greets_user_looks_up_and_displays_order_asks_to_modify.png)
