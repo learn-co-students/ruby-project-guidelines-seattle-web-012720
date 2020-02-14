@@ -402,27 +402,45 @@ class CommandLineInterface
     print "\n"
     print "Please enter the number of the order you wish to update:\n"
     toupdate = gets.chomp.to_i
-    order_status = ["received", "confirming validity", "confirming insurance", "ready for driver", "assigned to driver", "complete"]
-    counter = 0
-    print "\nWhat status would you like to assign to this order?\n\n"
-    order_status.each do |x|
-      print counter + 1
-      print ". "
-      print order_status[counter]
-      print "\n"
-      counter += 1
+    if toupdate <= 0
+      system("cls") || system("clear")
+      print "Please enter a numerical value.\n\n"
+      update_status
+    else
+      array = []
+      O2order.all.each do |x|
+        array << x.id
+      end
+      if array.exclude? toupdate
+        system("cls") || system("clear")
+        print "Order "
+        print toupdate
+        print " does not exist within the system. Please try again.\n\n"
+        update_status
+      else
+        order_status = ["received", "confirming validity", "confirming insurance", "ready for driver", "assigned to driver", "complete"]
+        counter = 0
+        print "\nWhat status would you like to assign to this order?\n\n"
+        order_status.each do |x|
+          print counter + 1
+          print ". "
+          print order_status[counter]
+          print "\n"
+          counter += 1
+        end
+        newselection = gets.chomp.to_i
+        newindex = (newselection - 1)
+        newstatus = order_status[newindex]
+        updateme = O2order.find_by(id: toupdate)
+        updateme.status = newstatus
+        updateme.save
+        print "the status of order "
+        print toupdate
+        print " has been updated to "
+        print newstatus
+        # start
+      end
     end
-    newselection = gets.chomp.to_i
-    newindex = (newselection - 1)
-    newstatus = order_status[newindex]
-    updateme = O2order.find_by(id: toupdate)
-    updateme.status = newstatus
-    updateme.save
-    print "the status of order "
-    print toupdate
-    print " has been updated to "
-    print newstatus
-    # start
   end
 
   def list_drivers
