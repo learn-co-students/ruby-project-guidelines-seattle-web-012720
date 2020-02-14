@@ -4,29 +4,29 @@
 TrackO2 is an app for tracking the delivery status of medical oxygen equipment.
 
 ##Motivation
-I wanted to create an app that would assist durable medical equipment companies in facilitating the delivery of oxygen and resperatory therapy equipment to patients.
+I wanted to create an app that would assist durable medical equipment companies in facilitating the delivery of oxygen and respiratory therapy equipment to patients.
 
 ##Screenshots
 
 Main Menu
 <br /> 
-<img src="./images/main_menu.png" width="600">
+<img src="./Images/main_menu.png" width="600">
 
 Status
 <br /> 
-<img src="./images/status.png" width="600">
+<img src="./Images/status.png" width="600">
 
 Order by driver
 <br /> 
-<img src="./images/order_by_driver.png" width="600">
+<img src="./Images/order_by_driver.png" width="600">
 
 Update order
 <br /> 
-<img src="./images/update_order_menu.png" width="600">
+<img src="./Images/update_order_menu.png" width="600">
 
 Delete
 <br /> 
-<img src="./images/delete.png" width="600">
+<img src="./Images/delete.png" width="600">
 
 
 
@@ -43,7 +43,7 @@ View a database of current orders
 View orders by status, or by assigned driver
 View individual orders with details
 Create orders
-Updte order status, driver, or delivery instructions
+Update order status, driver, or delivery instructions
 Delete an order
 
 ##Installation
