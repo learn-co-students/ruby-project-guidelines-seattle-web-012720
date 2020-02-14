@@ -97,6 +97,7 @@ class Helper
     end
 
     def self.topping_to_s(toppings, name= false)
+        #find way to ensure this becomes alphabetically sorted
         index = 0
         topping_name = ""
         toppings.length.times do 
