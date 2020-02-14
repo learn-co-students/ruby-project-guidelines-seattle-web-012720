@@ -513,43 +513,43 @@ class CommandLineInterface
             O2order.all.each do |x|
                 array<< x.id
             end
-            if array.exclude? disporderid
-                print "That order does not exist. Please try again.\n\n"
-                order_details
-            else
-    disporder = O2order.find_by(id: disporderid)
-    print "______________________________________\n"
-    print "        Status for order: "
-    print disporderid
-    print "\n______________________________________\n\n"
-    print "Order "
-    print disporderid
-    print " is a "
-    print disporder.setup_type
-    print " setup. It is located in area "
-    print disporder.location
-    print ".\n\n"
-    print "This order was created by: "
-    print get_name_csr(disporder.customer_service_rep_id)
-    print ".\n\n"
-    print "Order created: "
-    print disporder.created_at
-    print "\nLast update: "
-    print disporder.updated_at
-    print "\n\nCurrent status for this order is: "
-    print disporder.status
-    print "\n\nThis order has been assigned to "
-    print get_name_sr(disporder.service_rep_id)
-    print ". \n\n"
-    if disporder.special_instructions == "none" || nil
-      print "This order has no special instructions\n\n"
-    else
-      print "**Special instructions**\n"
-      print disporder.special_instructions
-    end
-    end
-    end
-    end
+                if array.exclude? disporderid
+                    print "That order does not exist. Please try again.\n\n"
+                    order_details
+                else
+                    disporder = O2order.find_by(id: disporderid)
+                    print "______________________________________\n"
+                    print "        Status for order: "
+                    print disporderid
+                    print "\n______________________________________\n\n"
+                    print "Order "
+                    print disporderid
+                    print " is a "
+                    print disporder.setup_type
+                    print " setup. It is located in area "
+                    print disporder.location
+                    print ".\n\n"
+                    print "This order was created by: "
+                    print get_name_csr(disporder.customer_service_rep_id)
+                    print ".\n\n"
+                    print "Order created: "
+                    print disporder.created_at
+                    print "\nLast update: "
+                    print disporder.updated_at
+                    print "\n\nCurrent status for this order is: "
+                    print disporder.status
+                    print "\n\nThis order has been assigned to "
+                    print get_name_sr(disporder.service_rep_id)
+                    print ". \n\n"
+                        if disporder.special_instructions == "none" || nil
+                        print "This order has no special instructions\n\n"
+                        else
+                        print "**Special instructions**\n"
+                        print disporder.special_instructions
+                end
+             end
+        end
+     end
   end
 
   def order_all_by_sr
