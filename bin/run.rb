@@ -1,5 +1,10 @@
-require_relative '../config/environment'
+require_relative "../config/environment"
 
+cli = CommandLineInterface.new
+cli.greet
+cli.start
 
+# cli.all
 
-puts "HELLO WORLD"
+# cli.if1
+# cli.return_current
