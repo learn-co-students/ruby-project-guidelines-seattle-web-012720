@@ -150,6 +150,7 @@ Fork and clone the repository. You will need to have Ruby installed on your devi
 
 ## Demo
 
+[demo.mov](https://github.com/lfriedrichs/ruby-project-guidelines-seattle-web-012720/blob/master/presentations/Demo.mov)
 
 
 ## Lessons Learned
@@ -167,4 +168,3 @@ Fork and clone the repository. You will need to have Ruby installed on your devi
 ## License
 
 [license](https://github.com/lfriedrichs/ruby-project-guidelines-seattle-web-012720/blob/master/LICENSE.md)
-
