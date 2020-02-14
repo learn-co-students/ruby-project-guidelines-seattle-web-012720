@@ -164,3 +164,7 @@ Fork and clone the repository. You will need to have Ruby installed on your devi
 
 ![slide 5](https://github.com/lfriedrichs/ruby-project-guidelines-seattle-web-012720/blob/master/images/Sliceline5.jpg)
 
+## License
+
+[license](https://github.com/lfriedrichs/ruby-project-guidelines-seattle-web-012720/blob/master/LICENSE.md)
+
