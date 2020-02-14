@@ -28,7 +28,7 @@ class CommandLineInterface
   end
 
   def menu
-    puts "** Main Menu **\n"
+    puts "\n\n** Main Menu **\n"
     puts "______________________________________"
     puts "1 - order status"
     puts "2 - create a new order"
@@ -74,7 +74,7 @@ class CommandLineInterface
       start
     elsif response == "3"
       system("cls") || system("clear")
-      print "feature not built\n\n"
+      update_instructions
       start
       # elsif response == "4"
       #   complete_orders
@@ -637,4 +637,24 @@ class CommandLineInterface
       print ". \n"
     end
   end
+end
+
+def update_instructions
+  fetch_all_orders
+  print "\n"
+  print "Please enter the number of the order you wish to update:\n"
+  toupdate = gets.chomp.to_i
+  print "\nWhat note would you like to add to this order?\n\n"
+  new_instruction = gets.chomp
+  # newindex = (newselection - 1)
+  # newstatus = order_status[newindex]
+  updateme = O2order.find_by(id: toupdate)
+  updateme.special_instructions = new_instruction
+  updateme.save
+  print "The following note has been added to order: "
+  print toupdate
+  print "\n\n** "
+  print new_instruction
+  print " **.\n\n"
+  # start
 end
