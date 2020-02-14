@@ -501,6 +501,14 @@ class CommandLineInterface
   def order_details
     print "Please enter the number of the order you would like to display:\n"
     disporderid = gets.chomp.to_i
+    if disporderid <= 0
+        print "Please try again\n\n"
+        order_details
+    else
+        if disporderid > O2order.all.length
+          print "Please try again\n\n"
+          order_details
+        else
     disporder = O2order.find_by(id: disporderid)
     print "______________________________________\n"
     print "        Status for order: "
@@ -530,6 +538,8 @@ class CommandLineInterface
     else
       print "**Special instructions**\n"
       print disporder.special_instructions
+    end
+    end
     end
   end
 
