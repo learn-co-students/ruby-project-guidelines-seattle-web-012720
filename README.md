@@ -58,7 +58,7 @@ Then, from the root directory, run "rake db:migrate" to create the database loca
 Lastly, run "rake db:seed". Now you're ready to go!
 
 ## Starting the program
-To start the program, type "ruby bin/run.rb". Follow on-screen instructions. 
+To start the program, type "ruby bin/run.rb". Follow on-screen instructions. For demonstration purposes, when creating a new order please use zip code "98531".
 
 ## Contributing
 Contributions are welcome, submit a pull request!

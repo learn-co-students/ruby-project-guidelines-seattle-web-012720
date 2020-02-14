@@ -244,9 +244,19 @@ class CommandLineInterface
       print "\n"
     end
     assigned_csr_id = gets.chomp.to_i
+    if assigned_csr_id > CustomerServiceRep.all.length
+        print "Please try again. \n"
+        assign_csr
+      else
+        if assigned_csr_id < 1
+          print "Please try again. \n"
+          assign_csr
+        else
     @assigned_csr_id = assigned_csr_id
     print get_name_csr(assigned_csr_id)
     print " is creating this order.\n\n"
+        end
+    end
   end
 
   def assign_sr
@@ -258,10 +268,20 @@ class CommandLineInterface
       print "\n"
     end
     assigned_sr_id = gets.chomp.to_i
-    @assigned_sr_id = assigned_sr_id
-    print get_name_sr(assigned_sr_id)
-    print " will be delivering/setting up this order.\n\n"
-  end
+    if assigned_sr_id > ServiceRep.all.length
+        print "Please try again. \n"
+        assign_sr
+      else
+        if assigned_sr_id < 1
+          print "Please try again. \n"
+          assign_sr
+        else
+            @assigned_sr_id = assigned_sr_id
+            print get_name_sr(assigned_sr_id)
+            print " will be delivering/setting up this order.\n\n"
+         end
+        end
+    end
 
   def order_type
     order_types = ["24-hour oxygen", "nocturnal oxygen", "nebulizer device"]
@@ -275,8 +295,18 @@ class CommandLineInterface
       counter += 1
     end
     selection = gets.chomp.to_i
+    if selection > order_types.length
+        print "Please try again. \n"
+        order_type
+      else
+        if selection < 1
+          print "Please try again. \n"
+          order_type
+        else
     index = (selection - 1)
     @order_type = order_types[index]
+        end
+    end
   end
 
   def get_notes
@@ -303,6 +333,9 @@ class CommandLineInterface
       print "Customer Service Rep confirmed!\n\n"
     elsif yn == "N"
       assign_csr
+    else
+        print "please try again"
+        confirm
     end
     print "Is " + get_name_sr(@assigned_sr_id) + " delivering this order?"
     yn = gets.chomp
@@ -310,6 +343,9 @@ class CommandLineInterface
       print "Service Rep confirmed!\n\n"
     elsif yn == "N"
       assign_sr
+    else
+        print "please try again"
+        confirm
     end
     print "Is this an order for " + @order_type + "?"
     yn = gets.chomp
@@ -317,6 +353,9 @@ class CommandLineInterface
       print "Setup type confirmed!\n\n"
     elsif yn == "N"
       order_type
+    else
+        print "please try again"
+        confirm
     end
     # binding.pry
     print "For special instructions, you said:" + @spuckts
@@ -325,6 +364,9 @@ class CommandLineInterface
       print "instructions confirmed!\n\n"
     elsif yn == "N"
       get_notes
+    else
+        print "please try again"
+        confirm
     end
   end
 
@@ -472,7 +514,7 @@ class CommandLineInterface
   end
 
   def order_by_sr
-    print "Please select a driver\n"
+    print "Please select a driver by their number.\n"
     ServiceRep.all.each do |x|
       print x.id
       print " - "
@@ -480,21 +522,31 @@ class CommandLineInterface
       print "\n"
     end
     checked_sr_id = gets.chomp.to_i
-    driversorders = O2order.all.filter { |x| x.service_rep_id == checked_sr_id }
-    print "These are the current orders for "
-    print get_name_sr(checked_sr_id)
-    print ". \n"
-    driversorders.each do |x|
-      location = x.location
-      csr = x.customer_service_rep_id
-      print "* order "
-      print x.id
-      print ". \n"
-      print "This order was created by "
-      print get_name_csr(csr)
-      print ", its status is currently: "
-      print x.status
-      print ". \n \n"
+    if checked_sr_id > ServiceRep.all.length
+      print "Please try again. \n"
+      order_by_sr
+    else
+      if checked_sr_id < 1
+        print "Please try again. \n"
+        order_by_sr
+      else
+        driversorders = O2order.all.filter { |x| x.service_rep_id == checked_sr_id }
+        print "These are the current orders for "
+        print get_name_sr(checked_sr_id)
+        print ". \n"
+        driversorders.each do |x|
+          location = x.location
+          csr = x.customer_service_rep_id
+          print "* order "
+          print x.id
+          print ". \n"
+          print "This order was created by "
+          print get_name_csr(csr)
+          print ", its status is currently: "
+          print x.status
+          print ". \n \n"
+        end
+      end
     end
   end
 
@@ -502,54 +554,54 @@ class CommandLineInterface
     print "Please enter the number of the order you would like to display:\n"
     disporderid = gets.chomp.to_i
     if disporderid <= 0
+      print "Please try again.\n\n"
+      order_details
+    else
+      if disporderid > O2order.all.length
         print "Please try again.\n\n"
         order_details
-    else
-        if disporderid > O2order.all.length
-          print "Please try again.\n\n"
+      else
+        array = []
+        O2order.all.each do |x|
+          array << x.id
+        end
+        if array.exclude? disporderid
+          print "That order does not exist. Please try again.\n\n"
           order_details
         else
-            array=[]
-            O2order.all.each do |x|
-                array<< x.id
-            end
-                if array.exclude? disporderid
-                    print "That order does not exist. Please try again.\n\n"
-                    order_details
-                else
-                    disporder = O2order.find_by(id: disporderid)
-                    print "______________________________________\n"
-                    print "        Status for order: "
-                    print disporderid
-                    print "\n______________________________________\n\n"
-                    print "Order "
-                    print disporderid
-                    print " is a "
-                    print disporder.setup_type
-                    print " setup. It is located in area "
-                    print disporder.location
-                    print ".\n\n"
-                    print "This order was created by: "
-                    print get_name_csr(disporder.customer_service_rep_id)
-                    print ".\n\n"
-                    print "Order created: "
-                    print disporder.created_at
-                    print "\nLast update: "
-                    print disporder.updated_at
-                    print "\n\nCurrent status for this order is: "
-                    print disporder.status
-                    print "\n\nThis order has been assigned to "
-                    print get_name_sr(disporder.service_rep_id)
-                    print ". \n\n"
-                        if disporder.special_instructions == "none" || nil
-                        print "This order has no special instructions\n\n"
-                        else
-                        print "**Special instructions**\n"
-                        print disporder.special_instructions
-                end
-             end
+          disporder = O2order.find_by(id: disporderid)
+          print "______________________________________\n"
+          print "        Status for order: "
+          print disporderid
+          print "\n______________________________________\n\n"
+          print "Order "
+          print disporderid
+          print " is a "
+          print disporder.setup_type
+          print " setup. It is located in area "
+          print disporder.location
+          print ".\n\n"
+          print "This order was created by: "
+          print get_name_csr(disporder.customer_service_rep_id)
+          print ".\n\n"
+          print "Order created: "
+          print disporder.created_at
+          print "\nLast update: "
+          print disporder.updated_at
+          print "\n\nCurrent status for this order is: "
+          print disporder.status
+          print "\n\nThis order has been assigned to "
+          print get_name_sr(disporder.service_rep_id)
+          print ". \n\n"
+          if disporder.special_instructions == "none" || nil
+            print "This order has no special instructions\n\n"
+          else
+            print "**Special instructions**\n"
+            print disporder.special_instructions
+          end
         end
-     end
+      end
+    end
   end
 
   def order_all_by_sr
