@@ -430,15 +430,20 @@ class CommandLineInterface
         end
         newselection = gets.chomp.to_i
         newindex = (newselection - 1)
-        newstatus = order_status[newindex]
-        updateme = O2order.find_by(id: toupdate)
-        updateme.status = newstatus
-        updateme.save
-        print "the status of order "
-        print toupdate
-        print " has been updated to "
-        print newstatus
-        # start
+        if newindex == -1
+          system("cls") || system("clear")
+          print "Please enter a valid selection.\n\n"
+          update_status
+        else
+          newstatus = order_status[newindex]
+          updateme = O2order.find_by(id: toupdate)
+          updateme.status = newstatus
+          updateme.save
+          print "the status of order "
+          print toupdate
+          print " has been updated to "
+          print newstatus
+        end
       end
     end
   end
