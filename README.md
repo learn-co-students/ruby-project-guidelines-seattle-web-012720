@@ -147,3 +147,16 @@ Fork and clone the repository. You will need to have Ruby installed on your devi
 ![error handling](https://github.com/lfriedrichs/ruby-project-guidelines-seattle-web-012720/blob/master/images/Error_handling_for_user_input_4.png)
 
 ![error handling](https://github.com/lfriedrichs/ruby-project-guidelines-seattle-web-012720/blob/master/images/Error_handling_for_user_input.png)
+
+## lessons learned
+
+![slide 1](https://github.com/lfriedrichs/ruby-project-guidelines-seattle-web-012720/blob/master/images/Sliceline1.jpg)
+
+![slide 2](https://github.com/lfriedrichs/ruby-project-guidelines-seattle-web-012720/blob/master/images/Sliceline2.jpg)
+
+![slide 3](https://github.com/lfriedrichs/ruby-project-guidelines-seattle-web-012720/blob/master/images/Sliceline3.jpg)
+
+![slide 4](https://github.com/lfriedrichs/ruby-project-guidelines-seattle-web-012720/blob/master/images/Sliceline4.jpg)
+
+![slide 5](https://github.com/lfriedrichs/ruby-project-guidelines-seattle-web-012720/blob/master/images/Sliceline5.jpg)
+
