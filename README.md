@@ -148,6 +148,10 @@ Fork and clone the repository. You will need to have Ruby installed on your devi
 
 ![error handling](https://github.com/lfriedrichs/ruby-project-guidelines-seattle-web-012720/blob/master/images/Error_handling_for_user_input.png)
 
+## demo
+
+
+
 ## lessons learned
 
 ![slide 1](https://github.com/lfriedrichs/ruby-project-guidelines-seattle-web-012720/blob/master/images/Sliceline1.jpg)
